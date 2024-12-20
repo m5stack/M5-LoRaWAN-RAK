@@ -8,10 +8,10 @@
 
 ## Related Link
 
-- [U184-CN470 Document & Datasheet]([m5-docs](https://docs.m5stack.com/en/unit/Unit LoRaWAN-CN470))
-- [U184-EU868 Document & Datasheet]([m5-docs](https://docs.m5stack.com/en/unit/Unit LoRaWAN-EU868))
-- [U184-US915 Document & Datasheet]([m5-docs](https://docs.m5stack.com/en/unit/Unit LoRaWAN-US915))
-- [U184-AS923 Document & Datasheet]([m5-docs](https://docs.m5stack.com/en/unit/Unit LoRaWAN-AS923))
+- [U184-CN470 Document & Datasheet](https://docs.m5stack.com/en/unit/Unit LoRaWAN-CN470)
+- [U184-EU868 Document & Datasheet](https://docs.m5stack.com/en/unit/Unit LoRaWAN-EU868)
+- [U184-US915 Document & Datasheet](https://docs.m5stack.com/en/unit/Unit LoRaWAN-US915)
+- [U184-AS923 Document & Datasheet](https://docs.m5stack.com/en/unit/Unit LoRaWAN-AS923)
 
 ## License
 
