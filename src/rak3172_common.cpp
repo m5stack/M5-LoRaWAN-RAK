@@ -96,11 +96,23 @@ bool checkString(const String& key, size_t len)
 
 bool RAK3172::init(HardwareSerial* serial, int rx, int tx, rak3172_bps_t baudRate)
 {
+    int baud;
+    switch (baudRate) {
+        case RAK3172_BPS_115200:
+            baud = 115200;
+            break;
+        case RAK3172_BPS_9600:
+            baud = 9600;
+            break;
+        case RAK3172_BPS_4800:
+            baud = 4800;
+            break;
+    }
     _serial = serial;
     _tx_pin = tx;
     _rx_pin = rx;
     _serial->setTimeout(200);
-    _serial->begin(baudRate, SERIAL_8N1, rx, tx);
+    _serial->begin(baud, SERIAL_8N1, rx, tx);
     _serial_mutex = xSemaphoreCreateMutex();
     xSemaphoreGive(_serial_mutex);
     return sendCommand("AT");

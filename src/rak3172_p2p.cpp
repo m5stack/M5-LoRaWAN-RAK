@@ -45,19 +45,8 @@ void RAK3172P2P::update()
 
 bool RAK3172P2P::init(HardwareSerial* serial, int rx, int tx, rak3172_bps_t baudRate)
 {
-    int baud;
-    switch (baudRate) {
-        case RAK3172_BPS_115200:
-            baud = 115200;
-            break;
-        case RAK3172_BPS_9600:
-            baud = 9600;
-            break;
-        case RAK3172_BPS_4800:
-            baud = 4800;
-            break;
-    }
-    RAK3172::init(serial, rx, tx, baud);
+    
+    RAK3172::init(serial, rx, tx, baudRate);
     restart();
     delay(100);
     return (sendCommand("AT") && sendCommand("AT+NWM=0"));
