@@ -1,0 +1,22 @@
+{
+    "name": "M5-LoRaWAN-RAK",
+    "description": "Library for M5Stack M5Unit LoRaWAN",
+    "keywords": "M5-LoRaWAN-RAK",
+    "authors": {
+        "name": "M5Stack",
+        "url": "http://www.m5stack.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/m5stack/M5-LoRaWAN-RAK.git"
+    },
+    "version": "1.0.0",
+    "frameworks": [
+        "arduino"
+    ],
+    "platforms": [
+        "espressif32",
+        "native"
+    ]
+
+}

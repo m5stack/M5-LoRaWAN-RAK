@@ -45,7 +45,6 @@ void RAK3172P2P::update()
 
 bool RAK3172P2P::init(HardwareSerial* serial, int rx, int tx, rak3172_bps_t baudRate)
 {
-    
     RAK3172::init(serial, rx, tx, baudRate);
     restart();
     delay(100);

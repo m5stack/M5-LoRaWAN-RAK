@@ -8,7 +8,6 @@
 
 bool RAK3172LoRaWAN::init(HardwareSerial* serial, int rx, int tx, rak3172_bps_t baudRate)
 {
-    
     RAK3172::init(serial, rx, tx, baudRate);
     delay(100);
     return (sendCommand("AT+NWM=1") && sendCommand("AT"));
