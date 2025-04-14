@@ -100,7 +100,7 @@ bool RAK3172P2P::setBandWidth(int bw)
     return sendCommand("AT+PBW=" + String(bw));
 }
 
-bool RAK3172P2P::setCodingRate(uint8_t cr)
+bool RAK3172P2P::setCodingRate(int8_t cr)
 {
     cr = constrain(cr, 0, 3);
     return sendCommand("AT+PCR=" + String(cr));

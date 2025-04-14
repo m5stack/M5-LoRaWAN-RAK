@@ -28,7 +28,7 @@ String decodeMsg(String hexEncoded)
         int i = 0;
         for (int loop = 2; loop < hexEncoded.length() + 1; loop += 2) {
             String tmpstr = hexEncoded.substring(loop - 2, loop);
-            sprintf(&tempbuf[i], "%c", strtoul(tmpstr.c_str(), nullptr, 16));
+            sprintf(&tempbuf[i], "%c", (int)strtoul(tmpstr.c_str(), nullptr, 16));
             i++;
         }
         return String(tempbuf);
@@ -68,7 +68,6 @@ long hex2bin(String hex)
     if ((hex.length() & 1) == 0) {
         char buf[hex.length() + 1];
         hex.toCharArray(buf, hex.length() + 1);
-        int i     = 0;
         long byte = 0;
         for (int loop = 2; loop < hex.length() + 1; loop += 2) {
             String tmpstr = hex.substring(loop - 2, loop);
@@ -106,6 +105,9 @@ bool RAK3172::init(HardwareSerial* serial, int rx, int tx, rak3172_bps_t baudRat
             break;
         case RAK3172_BPS_4800:
             baud = 4800;
+            break;
+        default:
+            baud = 115200;
             break;
     }
     _serial = serial;
@@ -157,6 +159,9 @@ bool RAK3172::setBaudRate(rak3172_bps_t baudRate)
             break;
         case RAK3172_BPS_4800:
             baud = 4800;
+            break;
+        default:
+            baud = 115200;
             break;
     }
     bool result = sendCommand("AT+BAUD=" + String(baud));

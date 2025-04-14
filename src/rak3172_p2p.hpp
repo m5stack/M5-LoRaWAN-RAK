@@ -254,7 +254,7 @@ public:
      * @return true if the coding rate configuration command was successfully sent;
      *         false if the command failed.
      */
-    bool setCodingRate(uint8_t cr);
+    bool setCodingRate(int8_t cr);
 
     /**
      * @brief Sets the output power for the P2P mode of the RAK3172 module.

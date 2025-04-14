@@ -1,22 +1,28 @@
 /*
- * SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+ * SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
  *
  * SPDX-License-Identifier: MIT
+ *
+ * @note See lora_config.h in examples/P2P
+ * @Hardwares: M5Core Basic v2.7+ Unit LoRaWAN CN470、EU868、US915 、AS923
+ * @Dependent Library:
+ * M5Unified@^0.2.5: https://github.com/m5stack/M5Unified
+ * M5-LoRaWAN-RAK:https://github.com/m5stack/M5-LoRaWAN-RAK
  */
 
 #include <M5Unified.h>
-#include "../examples/P2P/lora_config.h"
+#include "lora_config.h"
 #include "rak3172_p2p.hpp"
 
-RAK3172P2P lora;
-int msgCount = 0;
+#define LORA_CONFIG_PRLEN 8
+#define LORA_CONFIG_PWR   22
 
+RAK3172P2P lora;
+
+int msgCount = 0;
 int cr       = 0;
 int sf       = 12;
 int bw       = 125;
-int tx_power = 20;
-#define LORA_CONFIG_PRLEN 8
-#define LORA_CONFIG_PWR   22
 
 void LoRaLoopTask(void* arg)
 {

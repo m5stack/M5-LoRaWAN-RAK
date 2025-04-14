@@ -303,6 +303,12 @@ public:
      * @note Make sure that the frequency band and channel mask correspond to
      *       the regulations of your operating region. Incorrect settings may
      *       lead to communication issues or non-compliance with local laws.
+     * @note **This function is only applicable to the following frequency bands:**
+     *       - `US915`
+     *       - `AU915`
+     *       - `LA915`
+     *       - `CN470`
+     *       Other frequency bands may require different configuration methods.
      *
      * @param band A String representing the frequency band number
      *             associated with the desired region.
