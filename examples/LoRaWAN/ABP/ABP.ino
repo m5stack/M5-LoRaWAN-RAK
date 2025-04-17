@@ -32,8 +32,7 @@ void LoRaWANLoopTask(void* arg)
 
 void setup()
 {
-    auto cfg = M5.config();
-    AtomS3.begin(cfg);
+    M5.begin();
     Serial.begin(115200);
     while (!lorawan.init(&Serial2, RX, TX, RAK3172_BPS_115200)) {
         Serial.println("[Init] Failed to initialize module, retrying...");
