@@ -3,7 +3,6 @@
  *
  * SPDX-License-Identifier: MIT
  *
- * @note See lora_config.h in examples/P2P
  * @Hardwares: M5Core Basic v2.7+ Unit LoRaWAN CN470、EU868、US915 、AS923
  * @Dependent Library:
  * M5Unified@^0.2.5: https://github.com/m5stack/M5Unified
@@ -11,9 +10,9 @@
  */
 
 #include <M5Unified.h>
-#include "lora_config.h"
 #include "rak3172_p2p.hpp"
 
+#define LORA_FREQ         915E6
 #define LORA_CONFIG_PRLEN 8
 #define LORA_CONFIG_PWR   22
 
@@ -97,7 +96,10 @@ void loop()
             Serial.print(" LEN: ");
             Serial.print(frames[i].len);
             Serial.print(" Payload: ");
-            Serial.println(frames[i].payload);
+            for (uint8_t j = 0; j < frames[i].len; j++) {
+                Serial.printf("%02X", frames[i].payload[j]);
+            }
+            Serial.println();
         }
         lora.flush();
     }

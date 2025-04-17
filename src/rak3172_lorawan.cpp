@@ -63,7 +63,10 @@ bool RAK3172LoRaWAN::setDevEUI(const String& eui)
 
 bool RAK3172LoRaWAN::setBAND(String band, String channel_mask)
 {
-    return (sendCommand("AT+BAND=" + band) && sendCommand("AT+MASK=" + channel_mask));
+    if (band == "1" || band == "5" || band == "6") {
+        return sendCommand("AT+BAND=" + band) && sendCommand("AT+MASK=" + channel_mask);
+    }
+    return sendCommand("AT+BAND=" + band);
 }
 
 bool RAK3172LoRaWAN::setOTAA(String deveui, String appeui, String appkey)
@@ -264,7 +267,6 @@ void RAK3172LoRaWAN::update()
     if (xSemaphoreTake(_serial_mutex, portMAX_DELAY) == pdTRUE) {
         String res = _serial->readStringUntil('\n');
         xSemaphoreGive(_serial_mutex);
-        Serial.print(res);
         if (res.indexOf("+EVT:LINKCHECK") != -1) {
         }
 

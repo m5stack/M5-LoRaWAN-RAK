@@ -3,7 +3,6 @@
  *
  * SPDX-License-Identifier: MIT
  *
- * @note See lora_config.h in examples/P2P
  * @Hardwares: M5Atom + Unit LoRaWAN CN470、EU868、US915 、AS923
  * @Dependent Library:
  * M5Atom@^0.1.3: https://github.com/m5stack/M5Atom
@@ -11,9 +10,9 @@
  */
 
 #include <M5Atom.h>
-#include "lora_config.h"
 #include "rak3172_p2p.hpp"
 
+#define LORA_FREQ         915E6
 #define LORA_CONFIG_PRLEN 8
 #define LORA_CONFIG_PWR   22
 
@@ -30,6 +29,7 @@ int bw           = 125;
 void setup()
 {
     M5.begin(true, false, true);
+    Serial.begin(115200);
     M5.dis.fillpix(0x0000ff);
     while (!lora.init(&Serial2, 19, 22, RAK3172_BPS_115200)) {
         delay(1000);
@@ -77,7 +77,10 @@ void loop()
             Serial.print(" LEN: ");
             Serial.print(frames[i].len);
             Serial.print(" Payload: ");
-            Serial.println(frames[i].payload);
+            for (uint8_t j = 0; j < frames[i].len; j++) {
+                Serial.printf("%02X", frames[i].payload[j]);
+            }
+            Serial.println();
         }
         lora.flush();
     }
