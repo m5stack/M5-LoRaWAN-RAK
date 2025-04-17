@@ -59,7 +59,7 @@ void setup()
     }
     Serial.println("Device Init OK");
     Serial.print("[Config] Setting band to CN470...");
-    //get or set the channel mask to close or open the channel (only for US915, AU915, CN470)
+    // get or set the channel mask to close or open the channel (only for US915, AU915, CN470)
     while (!lorawan.setBAND(CN470, CHANNEL_MASK)) {
         Serial.println(" failed, retrying...");
         delay(1000);
