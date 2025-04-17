@@ -23,4 +23,4 @@ The module employs the **STM32WLE5** solution, supporting long‑range communica
 
 ## License
 
-- [MIT](https://github.com/m5stack/M5Unit-ByteButton/blob/main/LICENSE)
+- [MIT](https://github.com/m5stack/M5-LoRaWAN-RAK/blob/main/LICENSE)
