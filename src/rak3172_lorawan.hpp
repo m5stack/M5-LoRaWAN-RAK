@@ -317,7 +317,7 @@ public:
      * @return True if both commands to set the band and channel mask
      *         were successfully sent; false otherwise.
      */
-    bool setBAND(String band, String channel_mask="");
+    bool setBAND(String band, String channel_mask = "");
 
     /**
      * @brief Configures the device for Over-The-Air Activation (OTAA) for the RAK3172 LoRaWAN module.

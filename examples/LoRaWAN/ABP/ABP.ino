@@ -41,7 +41,7 @@ void setup()
     }
     Serial.println("Device Init OK");
     Serial.println("[Config] Setting band to  EU868...");
-    //get or set the channel mask to close or open the channel (only for US915, AU915, CN470)
+    // get or set the channel mask to close or open the channel (only for US915, AU915, CN470)
     while (!lorawan.setBAND(EU868)) {
         Serial.println(" failed, retrying...");
         delay(1000);
@@ -58,7 +58,7 @@ void setup()
         Serial.println(" failed, retrying...");
         delay(1000);
     }
-     Serial.println("[Config] Setting data rate to DR4...");
+    Serial.println("[Config] Setting data rate to DR4...");
     while (!lorawan.setDR(4)) {
         Serial.println(" failed, retrying...");
         delay(1000);
