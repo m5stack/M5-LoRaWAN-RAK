@@ -7,7 +7,7 @@
 #ifndef _RAK3172_RF_HPP_
 #define _RAK3172_RF_HPP_
 
-#include "rak3172_common.hPP"
+#include "rak3172_common.hpp"
 
 class RAK3172RF : public RAK3172 {
 public:
